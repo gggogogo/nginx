@@ -1,0 +1,8 @@
+const Koa = require('koa')
+const fs = require('fs')
+const app = new Koa()
+
+app.use(async ctx=>{
+  ctx.response.type = 'html'
+  ctx.response.body = fs.createReadStream('./demo2.html')
+}).listen(3001)
